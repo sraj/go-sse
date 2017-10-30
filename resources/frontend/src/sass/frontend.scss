@@ -1,0 +1,43 @@
+
+//Required for Bootstrap override variables
+@import "functions";
+
+//Override Bootstrap application variables
+@import "frontend-variables";
+
+//Bootstrap v4.0-beta
+@import "frontend-bootstrap";
+
+//SimpleLineIcons
+@import "simple-line-icons";
+
+body {
+     color: #434054;
+}
+
+.sse-header {
+    @extend .navbar;
+    @extend .bg-light;
+    @extend .navbar-light;
+    @extend .navbar-expand-lg;
+    @extend .container;
+
+    .nav-link.active {
+        color: $red !important;
+    }
+
+    padding: 0 1rem;
+}
+
+.sse-message-list {
+    @include make-col-ready();
+    @include media-breakpoint-up(sm) {
+        @include make-col(6);
+    }
+    @extend .mt-4;
+
+    .list-group {
+        overflow-y: auto;
+        height:400px;
+    }
+}
