@@ -88,7 +88,10 @@ gulp.task('webpack', function() {
             }),
             new webpack.optimize.CommonsChunkPlugin({
                 name: 'libraries',
-                filename: "libraries.bundle.js"
+                filename: 'libraries.bundle.js',
+                minChunks: function (module) {
+                  return module.context && module.context.includes('node_modules');
+                }
             }),
             new webpack.optimize.UglifyJsPlugin({
                 mangle: true,

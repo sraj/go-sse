@@ -8,7 +8,7 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/sraj/go-sse/libraries/sse"
+	"github.com/sraj/go-sse/pkg/sse"
 	"github.com/unrolled/render"
 )
 
