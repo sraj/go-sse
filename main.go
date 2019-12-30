@@ -17,7 +17,7 @@ func main() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 
 	rend := render.New(render.Options{
-		Directory:     "./resources/templates",
+		Directory:     "./resources/frontend/build",
 		Extensions:    []string{".tmpl", ".html"},
 		IsDevelopment: true,
 		Charset:       "UTF-8",
@@ -27,7 +27,6 @@ func main() {
 	hub.Start()
 
 	mux := http.NewServeMux()
-	mux.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./resources/assets"))))
 
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		rend.HTML(w, http.StatusOK, "index", "")
@@ -61,6 +60,8 @@ func main() {
 			}
 		}
 	}(hub)
+
+	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./resources/frontend/build/static"))))
 
 	http.ListenAndServe(":8080", mux)
 }

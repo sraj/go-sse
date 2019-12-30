@@ -9,10 +9,6 @@ export default class LineChart extends React.Component {
         data: []
     }
 
-    constructor(props) {
-        super(props)
-    }
-
     componentDidMount() {
         this.renderChart();
     }

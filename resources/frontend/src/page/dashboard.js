@@ -1,6 +1,6 @@
 import React from 'react';
-import Layout from 'layout/pagelayout';
-import LineChart from 'components/linechart';
+import Layout from '../layout/pagelayout';
+import LineChart from '../components/linechart';
 
 class Dashboard extends React.Component {
     constructor(props) {

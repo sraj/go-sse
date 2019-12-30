@@ -1,15 +1,11 @@
 
 //Required for Bootstrap override variables
-@import "functions";
-
-//Override Bootstrap application variables
-@import "frontend-variables";
-
-//Bootstrap v4.0-beta
 @import "frontend-bootstrap";
 
+@import "frontend-variables";
+
 //SimpleLineIcons
-@import "simple-line-icons";
+//@import "~simple-line-icons";
 
 body {
      color: #434054;

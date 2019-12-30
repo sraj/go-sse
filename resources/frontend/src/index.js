@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Dashboard from 'page/dashboard';
+import Dashboard from './page/dashboard';
+import './sass/frontend.scss';
 
 const Routes = () => (
     <Router>
